@@ -1,17 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-	fetchPosts,
-	getPosts,
-	getPostsError,
-	getPostsStatus,
-} from "./postSlice";
+import { useSelector } from "react-redux";
+import { getPosts, getPostsError, getPostsStatus } from "./postSlice";
 
-import { useEffect } from "react";
 import PostExcerpt from "./PostExcerpt";
 
 const PostList = () => {
-	const dispatch = useDispatch();
-
 	const posts = useSelector(getPosts);
 	const postsStatus = useSelector(getPostsStatus);
 	const postsError = useSelector(getPostsError);
@@ -20,12 +12,6 @@ const PostList = () => {
 	const orderedPosts = posts
 		.slice()
 		.sort((a, b) => b.date.localeCompare(a.date));
-
-	useEffect(() => {
-		if (postsStatus === "idle") {
-			dispatch(fetchPosts());
-		}
-	}, [postsStatus]);
 
 	// rendered content
 	let content = "";
