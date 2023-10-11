@@ -22,4 +22,8 @@ const usersSlice = createSlice({
 });
 
 export const getUsers = (store) => store.users;
+export const getUserById = (store, userId) => {
+	userId = parseInt(userId);
+	return store.users.find((user) => user.id === userId);
+};
 export default usersSlice.reducer;

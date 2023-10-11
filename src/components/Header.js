@@ -24,6 +24,11 @@ const Header = () => {
 							Add Post
 						</Link>
 					</li>
+					<li>
+						<Link style={{ color: "inherit" }} to="user">
+							Users
+						</Link>
+					</li>
 				</ul>
 			</nav>
 		</header>

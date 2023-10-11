@@ -8,6 +8,7 @@ const initialState = {
 	posts: [],
 	status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
 	error: null,
+	count: 0,
 };
 
 // function to get data
